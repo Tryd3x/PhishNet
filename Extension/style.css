@@ -1,0 +1,18 @@
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --fs-p: 1.4rem;
+}
+
+div {
+  height: 10rem;
+  width: 25rem;
+  font-size: 1rem;
+}
+
+p {
+  color: black;
+  font-size: var(--fs-p);
+}

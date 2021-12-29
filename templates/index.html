@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishNet</title>
+    <style>
+        body {
+            background: brown;
+        }
+
+        div {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 32px;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding-top: 100px;
+
+        }
+
+        p {
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="{{url_for('static',filename = '/shield.png')}}" alt="" width="100px">
+    </div>
+    <div>
+        {{message}}
+    </div>
+</body>
+
+</html>
