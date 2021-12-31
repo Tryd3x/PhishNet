@@ -2,7 +2,8 @@ console.log("Running...");
 
 async function getData(url_address) {
   try {
-    const res = await fetch("http://localhost:5000/predict", {
+    //https://phish-model.herokuapp.com/
+    const res = await fetch("https://phish-model.herokuapp.com/predict", {
       method: "POST",
       headers: {
         Accept: "application/json",
