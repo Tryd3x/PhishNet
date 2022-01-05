@@ -8,7 +8,7 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 #load XGBoost.pkl
-model = pickle.load(open('XGBoostClassifier.pickle.dat', 'rb'))
+model = pickle.load(open('XGBoostClassifier-retrained.pickle.dat', 'rb'))
 
 @app.route('/')
 def home():
@@ -24,8 +24,8 @@ def predict():
 
         #parse data into features
         features_extracted = featureExtraction(url)
-        print(len(features_extracted))
-        print(features_extracted)
+        # print(len(features_extracted))
+        # print(features_extracted)
         df = pd.DataFrame(features_extracted).transpose()
         df.columns = feature_names
         # print(df)
@@ -33,13 +33,8 @@ def predict():
         prediction = model.predict(df)
         prediction = prediction.tolist()
         return jsonify(prediction)
-        # print(type(prediction.tolist()))
     except Exception as e:
         return jsonify(e)
-
-    #return output
-    
-    # return render_template("index.html",message = 'Welcome to PhishNet!')
 
 if __name__ == '__main__':
     app.run(debug=True)

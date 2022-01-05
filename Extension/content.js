@@ -3,6 +3,7 @@ console.log("Running...");
 async function getData(url_address) {
   try {
     //https://phish-model.herokuapp.com/
+    //http://127.0.0.1:5000/
     const res = await fetch("https://phish-model.herokuapp.com/predict", {
       method: "POST",
       headers: {
