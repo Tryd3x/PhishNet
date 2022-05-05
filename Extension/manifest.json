@@ -1,6 +1,6 @@
 {
     "name": "PhishNet",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "Extension that detects phishing websites",
     "version": "1.1",
     "icons": {
@@ -8,8 +8,8 @@
         "48": "/assets/shield.png",
         "128": "/assets/shield.png"
     },
-    "browser_action": {
-        "default_popup": "extension.html",
+    "action": {
+        "default_popup": "popup.html",
         "default_icon": "/assets/shield.png"
     },
     "content_scripts": [
@@ -17,8 +17,7 @@
             "matches": [
                 "<all_urls>"
             ],
-            "js": ["content.js"],
-            "css":[]
+            "js": ["scan.js"]
         }
     ]
 }

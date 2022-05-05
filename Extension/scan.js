@@ -1,6 +1,8 @@
 console.log("Running...");
 
-async function getData(url_address) {
+let prediction;
+
+async function fetchData(url_address) {
   try {
     //https://phish-model.herokuapp.com/
     //http://127.0.0.1:5000/
@@ -14,8 +16,8 @@ async function getData(url_address) {
     });
 
     const data = await res.json();
-    console.log(data[0])
-    let prediction = data[0]
+    console.log("Prediction: "+data[0])
+    prediction = data[0]
 
     //launch alerts to user
     if (prediction == 1) alert("Phishing Detected!! This website may be harmful");
@@ -24,6 +26,12 @@ async function getData(url_address) {
   }
 }
 
+
+function parseData() {
+}
+
 var url = window.location.href;
 console.log(url);
-getData(url);
+fetchData(url);
+parseData();
+
