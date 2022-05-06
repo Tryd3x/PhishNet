@@ -4,12 +4,16 @@
     "description": "Extension that detects phishing websites",
     "version": "1.1",
     "permissions": [
-        "storage"
+        "storage",
+        "tabs"
     ],
     "icons": {
         "16": "/assets/shield.png",
         "48": "/assets/shield.png",
         "128": "/assets/shield.png"
+    },
+    "background": {
+        "service_work": "background.js"
     },
     "action": {
         "default_popup": "popup.html",
@@ -21,7 +25,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "scan.js"
+                "content.js"
             ]
         }
     ]

@@ -1,0 +1,1 @@
+//Figure chrome.tabs to communicate tab url along with predicted results to store it in chrome.storage

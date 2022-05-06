@@ -17,9 +17,12 @@ async function fetchData(url_address) {
     console.log("Prediction: " + data[0]);
     prediction = data[0];
 
+    var results = { url: url_address, prediction: prediction, test: "hello" }
+
     //work on this to store results into local storage and pass it to popup.js for UI features
-    chrome.storage.sync.set({ prediction: prediction }, () => {
-      console.log("Stored data: {prediction}");
+    chrome.storage.local.set({ "key":  results}, () => {
+      console.log(`Stored url: ${url_address}`);
+      console.log(`Stored data: ${prediction}`);
     });
 
     //launch alerts to user
