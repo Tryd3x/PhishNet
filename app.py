@@ -33,7 +33,7 @@ def predict():
 
         prediction = model.predict(df)
         prediction = prediction.tolist()
-        return jsonify(prediction)
+        return jsonify(prediction,features_extracted)
     except Exception as e:
         return jsonify(e)
 
